@@ -1,23 +1,20 @@
-<?php 
-
-$title = "Postani programer";
-$stranice = ["glavna", "o nama", "Kontant"];
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $title; ?></title>
+    <title>Document</title>
 </head>
 <body>
-    <h1> <?php echo $title; ?> </h1>
-    <a href=""> <?php echo $stranice[0] ?> </a>
-    <a href=""> <?php echo $stranice[1] ?></a>
-    <a href=""> <?php echo $stranice[2] ?></a>
+    <form method="get" action="domaci2.php">
+        <input type="text" name="cena_proizvoda" placeholder="Unesite cenu proizvoda">
+        <select name="vrsta_kupovine">
+            <option>Hrana</option>
+            <option>Oprema za racunare</option>
+        </select>
+        <input type="checkbox" name="provera_poreza">
+        <label for="html">Izracunaj porez</label>
+        <button>Izracunaj cenu</button>
+    </form>
 </body>
 </html>

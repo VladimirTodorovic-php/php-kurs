@@ -1,15 +1,18 @@
-<?php 
+<?php
 
-$trenutno_vreme = 22;
+$cena = $_GET["cena_proizvoda"];
+$vrsta_proizvoda = $_GET["vrsta_kupovine"];
 
-
-if($trenutno_vreme >= 5 && $trenutno_vreme < 12) { 
-    echo "jutro jeee, jutro je";
+if($vrsta_proizvoda == "Hrana") 
+{    
+    $cena = $cena + 50;
 }
-if($trenutno_vreme >= 12 && $trenutno_vreme < 20) {
-    echo "Podne je";
+else if($vrsta_proizvoda == "Oprema za racunare") 
+{
+    $cena = $cena + 250;
 }
-else {
-    echo "noc je";
+if (isset($_GET["provera_poreza"])) {
+    $cena = ($cena*0.1) + $cena;
 }
 
+echo $cena;
