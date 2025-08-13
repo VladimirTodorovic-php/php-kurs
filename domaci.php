@@ -1,3 +1,12 @@
+<?php 
+
+$stranica = [
+    "Glavna" => "index.php",
+    "O nama" => "abous_us.php",
+    "Kontant" => "contact.php",
+];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,15 +15,8 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="get" action="domaci2.php">
-        <input type="text" name="cena_proizvoda" placeholder="Unesite cenu proizvoda">
-        <select name="vrsta_kupovine">
-            <option>Hrana</option>
-            <option>Oprema za racunare</option>
-        </select>
-        <input type="checkbox" name="provera_poreza">
-        <label for="html">Izracunaj porez</label>
-        <button>Izracunaj cenu</button>
-    </form>
+    <?php foreach($stranica as $strana => $url): ?>
+        <a href="<?php echo $url ?>"><?php echo $strana ?></a>
+    <?php endforeach; ?>
 </body>
 </html>
