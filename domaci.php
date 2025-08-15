@@ -1,22 +1,15 @@
-<?php 
+<?php
 
-$stranica = [
-    "Glavna" => "index.php",
-    "O nama" => "abous_us.php",
-    "Kontant" => "contact.php",
-];
-?>
+function izracunajPDV($iznos) 
+{
+    if(!is_numeric($iznos)) {
+        echo "broj mora biti numericka vrednost";
+    }
+    else {
+        $procenat = $iznos * 0.22;
+        echo "PDV iznosi $procenat";
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <?php foreach($stranica as $strana => $url): ?>
-        <a href="<?php echo $url ?>"><?php echo $strana ?></a>
-    <?php endforeach; ?>
-</body>
-</html>
+}
+
+izracunajPDV(100);
